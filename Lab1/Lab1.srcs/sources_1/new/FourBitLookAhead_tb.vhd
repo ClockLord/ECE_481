@@ -25,7 +25,7 @@ architecture Behavioral of FourBitLookAhead_tb is
     signal A : std_logic_vector(3 downto 0) := "0000";
     signal B :std_logic_vector(3 downto 0) := "0000";
     signal Sum : std_logic_vector(3 downto 0) := "0000";
-    signal Op_Sel : std_logic := '0';
+    signal Op_Sel : std_logic := '1';
 
 
 begin

@@ -63,26 +63,26 @@ architecture Behavioral of FourBitLookAhead is
     
 begin
 
- Bin <= (others => '0') when (Op_Sel = '0') else (not Op_Sel & "000");
+ 
  Bor <= (B(3) xor Op_Sel) & (B(2) xor Op_Sel) & (B(1) xor Op_Sel) & (B(0) xor Op_Sel);
  
  --propogate function
- P(0)<=A(0) or B(0);
- P(1)<=A(1) or B(1);
- P(2)<=A(2) or B(2);
- P(3)<=A(3) or B(3);
+ P(0)<=A(0) or Bor(0);
+ P(1)<=A(1) or Bor(1);
+ P(2)<=A(2) or Bor(2);
+ P(3)<=A(3) or Bor(3);
  
  --generate function
- G(0)<= A(0) and B(0);
- G(1)<= A(1) and B(1);
- G(2)<= A(2) and B(2);
- G(3)<= A(3) and B(3);
+ G(0)<= A(0) and Bor(0);
+ G(1)<= A(1) and Bor(1);
+ G(2)<= A(2) and Bor(2);
+ G(3)<= A(3) and Bor(3);
 
  --Implement Ripple Carry logic
- Ci(0)<=G(0) or (P(0) and Bin(0));  --Op_Sel is first carry in
- Ci(1)<=G(1) or (P(1) and (G(0) or (P(0) and Bin(1))));
- Ci(2)<=G(2) or (P(2) and (G(1) or (P(1) and (G(0) or (P(0) and Bin(2))))));
- Ci(3)<=G(3) or (P(3) and (G(2) or (P(2) and (G(1) or (P(1) and (G(0) or (P(0) and Bin(3))))))));
+ Ci(0)<=G(0) or (P(0) and Op_Sel);  --Op_Sel is first carry in
+ Ci(1)<=G(1) or (P(1) and (G(0) or (P(0) and Op_Sel)));
+ Ci(2)<=G(2) or (P(2) and (G(1) or (P(1) and (G(0) or (P(0) and Op_Sel)))));
+ Ci(3)<=G(3) or (P(3) and (G(2) or (P(2) and (G(1) or (P(1) and (G(0) or (P(0) and Op_Sel)))))));
 
 
 
