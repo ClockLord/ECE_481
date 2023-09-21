@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log FourBit.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FourBit.tcl
+EAStep vivado -log FourBitLookAhead.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FourBitLookAhead.tcl

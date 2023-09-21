@@ -2,3 +2,6 @@ Running: xsim.dir/FourBit_tb_behav/xsimk.exe -simmode gui -wdb FourBit_tb_behav.
 Design successfully loaded
 Design Loading Memory Usage: 7848 KB (Peak: 7848 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 8388 KB (Peak: 8388 KB)
+Simulation CPU Usage: 15 ms
