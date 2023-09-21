@@ -33,6 +33,10 @@ begin
 
     Bor <= (B(3) or Op_Sel) & (B(2) or Op_Sel) & (B(1) or Op_Sel) & (B(0) or Op_Sel);
     
+    --Bor(0)<= B(0) or Op_Sel;
+    --Bor(0)<= B(1) or Op_Sel;
+    --Bor(0)<= B(2) or Op_Sel;
+   -- Bor(0)<= B(3) or Op_Sel;
     
 
 
