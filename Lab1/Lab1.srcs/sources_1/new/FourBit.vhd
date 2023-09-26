@@ -33,8 +33,6 @@ begin
 
     Bor <= (B(3) xor Op_Sel) & (B(2) xor Op_Sel) & (B(1) xor Op_Sel) & (B(0) xor Op_Sel);
     
-
-
 S0: OneBit port map (
 
 A => A(0), --A(0) in four_bit_adder.vhd is associated with A in full_adder.vhd

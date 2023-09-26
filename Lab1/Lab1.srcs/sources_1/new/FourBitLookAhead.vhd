@@ -22,22 +22,16 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity FourBitLookAhead is
+
     port (
         A : in std_logic_vector(3 downto 0);
         B : in std_logic_vector(3 downto 0);
         Sum : out std_logic_vector(3 downto 0);
         Op_Sel : in std_logic
     );
+    
 end FourBitLookAhead;
 
 
@@ -58,8 +52,6 @@ architecture Behavioral of FourBitLookAhead is
     signal Ci :std_logic_vector(3 downto 0);
     signal P : std_logic_vector(3 downto 0);
     signal G : std_logic_vector(3 downto 0);
-    signal Bin : std_logic_vector(3 downto 0);
-    
     
 begin
 
@@ -86,10 +78,10 @@ begin
 
 
 
-
+--Implement FourBitLookAhead as a combination of one bits
 S0: OneBit port map (
 
-A => A(0), --A(0) in four_bit_adder.vhd is associated with A in full_adder.vhd
+A => A(0),
 B => Bor(0),
 Cin => Op_Sel,
 Cout => Ci(0),
@@ -97,7 +89,7 @@ Sum => Sum(0));
 
 S1: OneBit port map (
 
-A => A(1), --A(0) in four_bit_adder.vhd is associated with A in full_adder.vhd
+A => A(1),
 B => Bor(1),
 Cin => ci(0),
 Cout => Ci(1),
@@ -105,7 +97,7 @@ Sum => Sum(1));
 
 S2: OneBit port map (
 
-A => A(2), --A(0) in four_bit_adder.vhd is associated with A in full_adder.vhd
+A => A(2),
 B => Bor(2),
 Cin => Ci(1),
 Cout => Ci(2),
@@ -113,9 +105,11 @@ Sum => Sum(2));
 
 S3: OneBit port map (
 
-A => A(3), --A(0) in four_bit_adder.vhd is associated with A in full_adder.vhd
+A => A(3), 
 B => Bor(3),
 Cin => Ci(2),
 Cout => Ci(3),
 Sum => Sum(3));
+
+
 end Behavioral;

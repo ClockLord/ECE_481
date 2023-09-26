@@ -1,0 +1,56 @@
+
+*** Running vivado
+    with args -log FourBitLookAhead.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAhead.tcl -notrace
+
+
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source FourBitLookAhead.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1467.891 ; gain = 160.594
+Command: link_design -top FourBitLookAhead -part xc7a100tcsg324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1894.516 ; gain = 0.000
+INFO: [Project 1-479] Netlist was created with Vivado 2023.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/sucit/Downloads/NexysA7.xdc]
+WARNING: [Vivado 12-584] No ports matched 'Cout'. [C:/Users/sucit/Downloads/NexysA7.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sucit/Downloads/NexysA7.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/sucit/Downloads/NexysA7.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2015.824 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+5 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2019.852 ; gain = 543.934
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net S3/Ci[2] has multiple drivers: S3/Sum_i_2__1/O, and S3/Sum_i_1__1/O.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net S3/UNCONN_OUT[0] has multiple drivers: S3/Sum_i_1/O, and S3/Sum_i_2/O.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net S3/UNCONN_OUT[1] has multiple drivers: S3/Sum_i_2__0/O, and S3/Sum_i_1__0/O.
+INFO: [Project 1-461] DRC finished with 3 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2042.816 ; gain = 22.965
+INFO: [Common 17-83] Releasing license: Implementation
+10 Infos, 1 Warnings, 1 Critical Warnings and 4 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Tue Sep 26 11:37:10 2023...
