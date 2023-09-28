@@ -1,0 +1,29 @@
+# General
+*.log
+*.jou
+
+# Compiled files
+*.bit
+*.bin
+
+# Simulation output directories
+simulation/
+
+# Generated directories by Vivado
+.ip_user_files/
+.sim/
+.hw/
+.xdb/
+
+# Other files
+*.html
+*.xml
+*.btree
+*.dat
+
+# Reports
+reports/
+*.rpt
+
+# Project cache
+.project_cache/
