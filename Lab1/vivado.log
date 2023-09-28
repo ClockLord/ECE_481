@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Sep 28 11:19:13 2023
+# Process ID: 15248
+# Current directory: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent728 C:\Users\sucit\OneDrive\Documents\Repositories\ECE_481\Lab1\Lab1.xpr
+# Log file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/vivado.log
+# Journal file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 28 11:21:00 2023...
