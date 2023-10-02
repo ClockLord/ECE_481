@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log FourBitLookAheadNoComponents.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FourBitLookAheadNoComponents.tcl" );
+         "-log FourBitLookAhead.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FourBitLookAhead.tcl" );
 
 
 

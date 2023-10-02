@@ -30,7 +30,7 @@ entity FourBitLookAhead is
         B : in std_logic_vector(3 downto 0);
         Sum : out std_logic_vector(3 downto 0);
         Op_Sel : in std_logic;
-        cout : out std_logic
+        Cout : out std_logic
     );
     
 end FourBitLookAhead;
@@ -41,7 +41,7 @@ architecture Behavioral of FourBitLookAhead is
 
     component LookAheadOneBit
             port(
-             A : in STD_LOGIC;
+            A : in STD_LOGIC;
             B : in STD_LOGIC;
             Ci : in STD_LOGIC;
             pi : out STD_LOGIC;
@@ -79,7 +79,7 @@ Ci(1)<=G(1) or (P(1) and (G(0) or (P(0) and Op_Sel)));
 Ci(2)<=G(2) or (P(2) and (G(1) or (P(1) and (G(0) or (P(0) and Op_Sel)))));
 Ci(3)<=G(3) or (P(3) and (G(2) or (P(2) and (G(1) or (P(1) and (G(0) or (P(0) and Op_Sel)))))));
 
-cout <= ci(3);
+Cout <= ci(3);
 
 --Implement FourBitLookAhead as a combination of one bits
 S0: LookAheadOneBit port map (

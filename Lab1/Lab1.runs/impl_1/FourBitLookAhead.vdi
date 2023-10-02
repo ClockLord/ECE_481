@@ -1,16 +1,16 @@
-
-*** Running vivado
-    with args -log FourBitLookAhead.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAhead.tcl -notrace
-
-
-
-****** Vivado v2023.1 (64-bit)
-  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
-  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
-  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Oct  2 13:37:09 2023
+# Process ID: 26972
+# Current directory: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1
+# Command line: vivado.exe -log FourBitLookAhead.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAhead.tcl -notrace
+# Log file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1/FourBitLookAhead.vdi
+# Journal file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1\vivado.jou
+# Running On: ndturner, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 14, Host memory: 34014 MB
+#-----------------------------------------------------------
 source FourBitLookAhead.tcl -notrace
 create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1467.320 ; gain = 159.504
 Command: link_design -top FourBitLookAhead -part xc7a100tcsg324-1
@@ -530,21 +530,25 @@ Writing XDEF routing special nets.
 Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 3079.227 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1/FourBitLookAhead_routed.dcp' has been generated.
 INFO: [Common 17-206] Exiting Vivado at Mon Oct  2 13:38:31 2023...
-
-*** Running vivado
-    with args -log FourBitLookAhead.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAhead.tcl -notrace
-
-
-
-****** Vivado v2023.1 (64-bit)
-  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
-  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
-  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Oct  2 13:38:50 2023
+# Process ID: 4264
+# Current directory: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1
+# Command line: vivado.exe -log FourBitLookAhead.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAhead.tcl -notrace
+# Log file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1/FourBitLookAhead.vdi
+# Journal file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1\vivado.jou
+# Running On: ndturner, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 14, Host memory: 34014 MB
+#-----------------------------------------------------------
 source FourBitLookAhead.tcl -notrace
 Command: open_checkpoint FourBitLookAhead_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1316.391 ; gain = 8.969
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1893.328 ; gain = 0.000
 INFO: [Project 1-479] Netlist was created with Vivado 2023.1

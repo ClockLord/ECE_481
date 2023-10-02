@@ -1,16 +1,16 @@
-
-*** Running vivado
-    with args -log FourBitLookAhead.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAhead.tcl -notrace
-
-
-
-****** Vivado v2023.1 (64-bit)
-  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
-  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
-  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Oct  2 13:37:09 2023
+# Process ID: 26972
+# Current directory: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1
+# Command line: vivado.exe -log FourBitLookAhead.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAhead.tcl -notrace
+# Log file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1/FourBitLookAhead.vdi
+# Journal file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1\vivado.jou
+# Running On: ndturner, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 14, Host memory: 34014 MB
+#-----------------------------------------------------------
 source FourBitLookAhead.tcl -notrace
 create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1467.320 ; gain = 159.504
 Command: link_design -top FourBitLookAhead -part xc7a100tcsg324-1
@@ -530,71 +530,3 @@ Writing XDEF routing special nets.
 Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 3079.227 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1/FourBitLookAhead_routed.dcp' has been generated.
 INFO: [Common 17-206] Exiting Vivado at Mon Oct  2 13:38:31 2023...
-
-*** Running vivado
-    with args -log FourBitLookAhead.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAhead.tcl -notrace
-
-
-
-****** Vivado v2023.1 (64-bit)
-  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
-  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
-  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-
-source FourBitLookAhead.tcl -notrace
-Command: open_checkpoint FourBitLookAhead_routed.dcp
-INFO: [Device 21-403] Loading part xc7a100tcsg324-1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1893.328 ; gain = 0.000
-INFO: [Project 1-479] Netlist was created with Vivado 2023.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Timing 38-478] Restoring timing data from binary archive.
-INFO: [Timing 38-479] Binary timing data restore complete.
-INFO: [Project 1-856] Restoring constraints from binary archive.
-INFO: [Project 1-853] Binary constraint restore complete.
-Reading XDEF placement.
-Reading placer database...
-Reading XDEF routing.
-Read XDEF Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.103 . Memory (MB): peak = 2558.902 ; gain = 16.527
-Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.103 . Memory (MB): peak = 2558.902 ; gain = 16.527
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2558.902 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-INFO: [Project 1-604] Checkpoint was created with Vivado v2023.1 (64-bit) build 3865809
-open_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:25 . Memory (MB): peak = 2558.902 ; gain = 1251.664
-Command: write_bitstream -force FourBitLookAhead.bit
-Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
-Running DRC as a precondition to command write_bitstream
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/FPGA_DEV/Vivado/2023.1/data/ip'.
-INFO: [DRC 23-27] Running DRC with 2 threads
-WARNING: [DRC CFGBVS-1] Missing CFGBVS and CONFIG_VOLTAGE Design Properties: Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
-
- set_property CFGBVS value1 [current_design]
- #where value1 is either VCCO or GND
-
- set_property CONFIG_VOLTAGE value2 [current_design]
- #where value2 is the voltage provided to configuration bank 0
-
-Refer to the device configuration user guide for more information.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 1 Warnings
-INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
-INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
-Loading data files...
-Loading site data...
-Loading route data...
-Processing options...
-Creating bitmap...
-Creating bitstream...
-Writing bitstream ./FourBitLookAhead.bit...
-INFO: [Vivado 12-1842] Bitgen Completed Successfully.
-INFO: [Common 17-83] Releasing license: Implementation
-19 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
-write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 3197.594 ; gain = 638.691
-INFO: [Common 17-206] Exiting Vivado at Mon Oct  2 13:39:39 2023...
