@@ -26,8 +26,8 @@ architecture Behavioral of FourBitLookAhead_tb is
     signal A : std_logic_vector(3 downto 0) := "0000";
     signal B :std_logic_vector(3 downto 0) := "0000";
     signal Sum : std_logic_vector(3 downto 0) := "0000";
-    signal Op_Sel : std_logic := '0';
-
+    signal Op_Sel : std_logic := '1';
+    signal cout : std_logic :='0';
 
 begin
 
@@ -36,7 +36,8 @@ uut: FourBitLookAhead port map (
 A => A,
 B => B,
 Sum => Sum,
-Op_Sel => Op_Sel
+Op_Sel => Op_Sel,
+cout => cout
 
 );
 

@@ -43,6 +43,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log FourBitLookAhead.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAhead.tcl -notrace
+EAStep vivado -log FourBitLookAheadNoComponents.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAheadNoComponents.tcl -notrace
 
 

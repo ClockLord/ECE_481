@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1/FourBitLookAhead.tcl"
+  variable script "C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1/FourBitLookAheadNoComponents.tcl"
   variable category "vivado_impl"
 }
 
@@ -138,13 +138,13 @@ OPTRACE "set parameters" START { }
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/synth_1/FourBitLookAhead.dcp
+  add_files -quiet C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/synth_1/FourBitLookAheadNoComponents.dcp
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/sucit/Downloads/NexysA7.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
-  link_design -top FourBitLookAhead -part xc7a100tcsg324-1 
+  link_design -top FourBitLookAheadNoComponents -part xc7a100tcsg324-1 
 OPTRACE "link_design" END { }
 OPTRACE "gray box cells" START { }
 OPTRACE "gray box cells" END { }
@@ -176,10 +176,10 @@ OPTRACE "opt_design" END { }
 OPTRACE "read constraints: opt_design_post" START { }
 OPTRACE "read constraints: opt_design_post" END { }
 OPTRACE "opt_design reports" START { REPORT }
-  create_report "impl_1_opt_report_drc_0" "report_drc -file FourBitLookAhead_drc_opted.rpt -pb FourBitLookAhead_drc_opted.pb -rpx FourBitLookAhead_drc_opted.rpx"
+  create_report "impl_1_opt_report_drc_0" "report_drc -file FourBitLookAheadNoComponents_drc_opted.rpt -pb FourBitLookAheadNoComponents_drc_opted.pb -rpx FourBitLookAheadNoComponents_drc_opted.rpx"
 OPTRACE "opt_design reports" END { }
 OPTRACE "Opt Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force FourBitLookAhead_opt.dcp
+  write_checkpoint -force FourBitLookAheadNoComponents_opt.dcp
 OPTRACE "Opt Design: write_checkpoint" END { }
   close_msg_db -file opt_design.pb
 } RESULT]
@@ -210,12 +210,12 @@ OPTRACE "place_design" END { }
 OPTRACE "read constraints: place_design_post" START { }
 OPTRACE "read constraints: place_design_post" END { }
 OPTRACE "place_design reports" START { REPORT }
-  create_report "impl_1_place_report_io_0" "report_io -file FourBitLookAhead_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file FourBitLookAhead_utilization_placed.rpt -pb FourBitLookAhead_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file FourBitLookAhead_control_sets_placed.rpt"
+  create_report "impl_1_place_report_io_0" "report_io -file FourBitLookAheadNoComponents_io_placed.rpt"
+  create_report "impl_1_place_report_utilization_0" "report_utilization -file FourBitLookAheadNoComponents_utilization_placed.rpt -pb FourBitLookAheadNoComponents_utilization_placed.pb"
+  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file FourBitLookAheadNoComponents_control_sets_placed.rpt"
 OPTRACE "place_design reports" END { }
 OPTRACE "Place Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force FourBitLookAhead_placed.dcp
+  write_checkpoint -force FourBitLookAheadNoComponents_placed.dcp
 OPTRACE "Place Design: write_checkpoint" END { }
   close_msg_db -file place_design.pb
 } RESULT]
@@ -243,7 +243,7 @@ OPTRACE "read constraints: phys_opt_design_post" END { }
 OPTRACE "phys_opt_design report" START { REPORT }
 OPTRACE "phys_opt_design report" END { }
 OPTRACE "Post-Place Phys Opt Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force FourBitLookAhead_physopt.dcp
+  write_checkpoint -force FourBitLookAheadNoComponents_physopt.dcp
 OPTRACE "Post-Place Phys Opt Design: write_checkpoint" END { }
   close_msg_db -file phys_opt_design.pb
 } RESULT]
@@ -269,17 +269,17 @@ OPTRACE "route_design" END { }
 OPTRACE "read constraints: route_design_post" START { }
 OPTRACE "read constraints: route_design_post" END { }
 OPTRACE "route_design reports" START { REPORT }
-  create_report "impl_1_route_report_drc_0" "report_drc -file FourBitLookAhead_drc_routed.rpt -pb FourBitLookAhead_drc_routed.pb -rpx FourBitLookAhead_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file FourBitLookAhead_methodology_drc_routed.rpt -pb FourBitLookAhead_methodology_drc_routed.pb -rpx FourBitLookAhead_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file FourBitLookAhead_power_routed.rpt -pb FourBitLookAhead_power_summary_routed.pb -rpx FourBitLookAhead_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file FourBitLookAhead_route_status.rpt -pb FourBitLookAhead_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -report_unconstrained -file FourBitLookAhead_timing_summary_routed.rpt -pb FourBitLookAhead_timing_summary_routed.pb -rpx FourBitLookAhead_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file FourBitLookAhead_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file FourBitLookAhead_clock_utilization_routed.rpt"
-  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file FourBitLookAhead_bus_skew_routed.rpt -pb FourBitLookAhead_bus_skew_routed.pb -rpx FourBitLookAhead_bus_skew_routed.rpx"
+  create_report "impl_1_route_report_drc_0" "report_drc -file FourBitLookAheadNoComponents_drc_routed.rpt -pb FourBitLookAheadNoComponents_drc_routed.pb -rpx FourBitLookAheadNoComponents_drc_routed.rpx"
+  create_report "impl_1_route_report_methodology_0" "report_methodology -file FourBitLookAheadNoComponents_methodology_drc_routed.rpt -pb FourBitLookAheadNoComponents_methodology_drc_routed.pb -rpx FourBitLookAheadNoComponents_methodology_drc_routed.rpx"
+  create_report "impl_1_route_report_power_0" "report_power -file FourBitLookAheadNoComponents_power_routed.rpt -pb FourBitLookAheadNoComponents_power_summary_routed.pb -rpx FourBitLookAheadNoComponents_power_routed.rpx"
+  create_report "impl_1_route_report_route_status_0" "report_route_status -file FourBitLookAheadNoComponents_route_status.rpt -pb FourBitLookAheadNoComponents_route_status.pb"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -report_unconstrained -file FourBitLookAheadNoComponents_timing_summary_routed.rpt -pb FourBitLookAheadNoComponents_timing_summary_routed.pb -rpx FourBitLookAheadNoComponents_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file FourBitLookAheadNoComponents_incremental_reuse_routed.rpt"
+  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file FourBitLookAheadNoComponents_clock_utilization_routed.rpt"
+  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file FourBitLookAheadNoComponents_bus_skew_routed.rpt -pb FourBitLookAheadNoComponents_bus_skew_routed.pb -rpx FourBitLookAheadNoComponents_bus_skew_routed.rpx"
 OPTRACE "route_design reports" END { }
 OPTRACE "Route Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force FourBitLookAhead_routed.dcp
+  write_checkpoint -force FourBitLookAheadNoComponents_routed.dcp
 OPTRACE "Route Design: write_checkpoint" END { }
 OPTRACE "route_design misc" START { }
   close_msg_db -file route_design.pb
@@ -287,7 +287,7 @@ OPTRACE "route_design misc" START { }
 if {$rc} {
 OPTRACE "route_design write_checkpoint" START { CHECKPOINT }
 OPTRACE "route_design write_checkpoint" END { }
-  write_checkpoint -force FourBitLookAhead_routed_error.dcp
+  write_checkpoint -force FourBitLookAheadNoComponents_routed_error.dcp
   step_failed route_design
   return -code error $RESULT
 } else {

@@ -88,7 +88,7 @@ A => A(0),
 B => B(0),
 Pi => p(0),
 Gi => g(0),
-Ci => Ci(0),
+Ci => op_sel,
 op_sel => op_sel,
 Sum => Sum(0));
 
@@ -98,7 +98,7 @@ A => A(1),
 B => B(1),
 Pi => p(1),
 Gi => g(1),
-Ci => Ci(1),
+Ci => Ci(0),
 op_sel => op_sel,
 Sum => Sum(1));
 
@@ -108,7 +108,7 @@ A => A(2),
 B => B(2),
 Pi => p(2),
 Gi => g(2),
-Ci => Ci(2),
+Ci => Ci(1),
 op_sel => op_sel,
 Sum => Sum(2));
 
