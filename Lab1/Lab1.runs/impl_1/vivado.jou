@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Mon Oct  2 13:38:50 2023
-# Process ID: 4264
+# Start of session at: Mon Oct  2 22:25:47 2023
+# Process ID: 11724
 # Current directory: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1
-# Command line: vivado.exe -log FourBitLookAhead.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FourBitLookAhead.tcl -notrace
-# Log file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1/FourBitLookAhead.vdi
+# Command line: vivado.exe -log FourBit.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FourBit.tcl -notrace
+# Log file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1/FourBit.vdi
 # Journal file: C:/Users/sucit/OneDrive/Documents/Repositories/ECE_481/Lab1/Lab1.runs/impl_1\vivado.jou
 # Running On: ndturner, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 14, Host memory: 34014 MB
 #-----------------------------------------------------------
-source FourBitLookAhead.tcl -notrace
+source FourBit.tcl -notrace
