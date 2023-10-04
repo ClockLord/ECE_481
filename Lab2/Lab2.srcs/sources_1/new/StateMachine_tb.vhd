@@ -31,6 +31,9 @@ end component;
     signal R_light : std_logic := '0';
     signal H_light : std_logic := '0';
     
+    constant CLOCK_PERIOD : time := 1000ns; -- Adjust as needed
+    signal simulation_done : boolean := false;
+    
 begin
 
 uut: StateMachine PORT MAP (
@@ -43,5 +46,41 @@ uut: StateMachine PORT MAP (
     H_light => H_Light
 );
 
+ clk_process: process
+    begin
+        while not simulation_done loop
+            clk <= '0';
+            wait for CLOCK_PERIOD / 10000;
+            clk <= '1';
+            wait for CLOCK_PERIOD / 100000;
+        end loop;
+        wait;
+    end process;
+    
+    simulation_process: process
+    begin
+        -- Initialize inputs
+        reset_L <= '1';
+        L_turn <= '0';
+        R_turn <= '0';
+
+        -- Reset and start the state machine
+        reset_L <= '0';
+        wait for 20 ns; -- Assuming a reset time of 20 ns
+
+        -- Test cases
+        -- You can add more test cases here by modifying input values
+        L_turn <= '1';
+        R_turn <= '0';
+        wait for 100 ns;
+        L_turn <= '0';
+        R_turn <= '1';
+        wait for 100 ns;
+        L_turn <= '1';
+        R_turn <= '1';
+        wait for 100 ns;
+        simulation_done <= true;
+        wait;
+    end process;
 
 end Behavioral;

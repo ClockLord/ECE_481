@@ -59,14 +59,14 @@ BEGIN
                 H_light <= '0';
             WHEN LSIG =>
             --implement Left blinking through clock divider here
-                L_light <= clk_div_rising;
+                L_light <= '1';
                 R_light <= '0';
                 H_light <= '0';
                 nx_state <= IDLE;
             WHEN RSIG =>
             --implement Right blinking through clock divider here
                 L_light <= '0';
-                R_light <= clk_div_rising;
+                R_light <= '1';
                 H_light <= '0';
                 nx_state <= IDLE;
             WHEN H1 =>
