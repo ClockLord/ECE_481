@@ -23,6 +23,8 @@ ARCHITECTURE Behavioral OF StateMachine IS
     SIgnal count_rising : INTEGER := 0;
     
     SIGNAL clk_div_rising : STD_LOGIC := '0';
+    SIGNAL clk_div_falling : STD_LOGIC := '1';
+
 
     CONSTANT BLINK_RATE : INTEGER := 100000000;
     
@@ -59,14 +61,14 @@ BEGIN
                 H_light <= '0';
             WHEN LSIG =>
             --implement Left blinking through clock divider here
-                L_light <= '1';
+                L_light <= clk_div_rising;
                 R_light <= '0';
                 H_light <= '0';
                 nx_state <= IDLE;
             WHEN RSIG =>
             --implement Right blinking through clock divider here
                 L_light <= '0';
-                R_light <= '1';
+                R_light <= clk_div_rising;
                 H_light <= '0';
                 nx_state <= IDLE;
             WHEN H1 =>
@@ -79,7 +81,7 @@ BEGIN
             --implement Hazard blinking through clock divider here
                 L_light <= '0';
                 R_light <= '0';
-                H_light <= clk_div_rising;
+                H_light <= clk_div_falling;
                 nx_state <= IDLE;
             WHEN OTHERS =>
                 nx_state <= IDLE;
@@ -95,35 +97,18 @@ BEGIN
             count_rising <= count_rising + 1;
             
             if count_rising >= BLINK_RATE then
-                clk_div_rising <= '1';
+                clk_div_rising <= NOT clk_div_rising;
+                clk_div_falling <= NOT clk_div_falling;
                 count_rising <= 0;
                 
-                ELSE
-                    clk_div_rising <= '0';       
+                ELSE  
    
             end if;
             
         end if;
     End Process; 
     
-   -- Process (Clk) 
-    --Begin 
-       -- if Falling_Edge(clk) then 
-          --  count_falling <= count_falling + 1; 
-            
-           -- if count_falling >= BLINK_RATE then 
-               -- clk_div_falling <= '1';
-               -- count_falling <= 0; 
-                
-              --  ELSE 
-                   -- clk_div_rising <= '0';
-                    
-               -- end if;
-                
-          --end if; 
-     
-   --  end process; 
-      
+  
     
     
     
