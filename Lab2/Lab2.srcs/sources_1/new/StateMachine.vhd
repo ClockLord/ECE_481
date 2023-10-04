@@ -11,6 +11,7 @@ ENTITY StateMachine IS
         L_light : OUT STD_LOGIC;
         R_light : OUT STD_LOGIC;
         H_light : OUT STD_LOGIC);
+       
         
 END StateMachine;
 
@@ -19,6 +20,11 @@ ARCHITECTURE Behavioral OF StateMachine IS
     TYPE state_type IS (IDLE, LSIG, RSIG, H1, H2);
     
     SIGNAL pr_state, nx_state : state_type;
+    SIgnal count_rising : INTEGER := 0;
+    
+    SIGNAL clk_div_rising : STD_LOGIC := '0';
+
+    CONSTANT BLINK_RATE : INTEGER := 100000000;
     
 BEGIN
     --- sequential part (state memory logic) -- 
@@ -27,6 +33,8 @@ BEGIN
     
         IF (clk'event AND clk = '1') THEN --- rising_edge
             pr_state <= nx_state;
+            
+            --implement clock divider here (math wise to blink for 1 sec we need a prescaler of 100,000,000)
         END IF;
         
     END PROCESS;
@@ -50,24 +58,28 @@ BEGIN
                 R_light <= '0';
                 H_light <= '0';
             WHEN LSIG =>
-                L_light <= '1';
+            --implement Left blinking through clock divider here
+                L_light <= clk_div_rising;
                 R_light <= '0';
                 H_light <= '0';
                 nx_state <= IDLE;
             WHEN RSIG =>
+            --implement Right blinking through clock divider here
                 L_light <= '0';
-                R_light <= '1';
+                R_light <= clk_div_rising;
                 H_light <= '0';
                 nx_state <= IDLE;
             WHEN H1 =>
-                L_light <= '1';
-                R_light <= '1';
+            --implement Hazard blinking through clock divider here
+                L_light <= clk_div_rising;
+                R_light <= clk_div_rising;
                 H_light <= '0';
                 nx_state <= H2;
             WHEN H2 =>
+            --implement Hazard blinking through clock divider here
                 L_light <= '0';
                 R_light <= '0';
-                H_light <= '1';
+                H_light <= clk_div_rising;
                 nx_state <= IDLE;
             WHEN OTHERS =>
                 nx_state <= IDLE;
@@ -76,4 +88,43 @@ BEGIN
                 H_light <= '0';
         END CASE;
     END PROCESS;
+    
+    PROCESS (Clk) 
+    Begin 
+        if Rising_Edge(clk) then 
+            count_rising <= count_rising + 1;
+            
+            if count_rising >= BLINK_RATE then
+                clk_div_rising <= '1';
+                count_rising <= 0;
+                
+                ELSE
+                    clk_div_rising <= '0';       
+   
+            end if;
+            
+        end if;
+    End Process; 
+    
+   -- Process (Clk) 
+    --Begin 
+       -- if Falling_Edge(clk) then 
+          --  count_falling <= count_falling + 1; 
+            
+           -- if count_falling >= BLINK_RATE then 
+               -- clk_div_falling <= '1';
+               -- count_falling <= 0; 
+                
+              --  ELSE 
+                   -- clk_div_rising <= '0';
+                    
+               -- end if;
+                
+          --end if; 
+     
+   --  end process; 
+      
+    
+    
+    
 END Behavioral;
