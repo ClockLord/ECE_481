@@ -40,19 +40,27 @@ architecture Behavioral of encrypt_design is
 
 --we need to store the initial values of the LFSR
 signal LFSR_init : std_logic_vector(7 downto 0) := "00110100"; --value correcponds to 34 in hex
+signal shiftNum : integer := 1; --the number of shifts between sampled values is 1
 
---need to make state machine
 begin
 
 --this will push the state machine forwards
---so this shifting needs to have a predetermined number of shifts
+--so this shifting needs to have a predetermined number of shifts basiclally we will need to count
     process(clk)
     begin
+
+         for i in 0 to shiftNum loop
         --this is where the "feedback polynomial" takes place.
-        if rising_edge(clk) then
-        
-        
-        end if;
+             LFSR_init(0) <=
+             LFSR_init(1) <=
+             LFSR_init(2) <=
+             LFSR_init(3) <=
+             LFSR_init(4) <=
+             LFSR_init(5) <=
+             LFSR_init(6) <=
+             LFSR_init(7) <=
+         end loop;
+         
     end process;
     
 end Behavioral;
