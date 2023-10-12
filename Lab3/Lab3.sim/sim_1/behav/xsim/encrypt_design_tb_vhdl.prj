@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Lab3.srcs/sources_1/new/encrypt_design.vhd" \
+"../../../../Lab3.srcs/sources_1/new/encrypt_design_tb.vhd" \
+
+# Do not sort compile order
+nosort
