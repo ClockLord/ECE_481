@@ -39,7 +39,7 @@ end encrypt_design;
 architecture Behavioral of encrypt_design is
 
 --we need to store the initial values of the LFSR
-signal LFSR : std_logic_vector(7 downto 0); -- "00110100"; --value correcponds to 34 in hex
+signal LFSR : std_logic_vector(7 downto 0):="00000000"; -- "00110100"; --value correcponds to 34 in hex
 --signal shiftNum : integer := 1; --the number of shifts between sampled values is 1
 
 begin
@@ -77,7 +77,7 @@ begin
     --Perform encryption
     if rising_edge(clk) then
         if encrypt_cntl = '1' then
-            output_val <= input_val xor LFSR xor LFSR;
+            output_val <= input_val xor LFSR;
         end if;
    end if;     
    

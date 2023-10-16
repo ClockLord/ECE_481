@@ -1,7 +1,7 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
-"../../../../Lab1.srcs/sources_1/new/FourBit.vhd" \
-"../../../../Lab1.srcs/sources_1/new/OneBit.vhd" \
+"../../../../Lab1.srcs/sources_1/new/FourBitLookAhead.vhd" \
+"../../../../Lab1.srcs/sources_1/new/LookAheadOneBit.vhd" \
 "../../../../Lab1.srcs/sources_1/new/FourBitLookAhead_tb.vhd" \
 
 # Do not sort compile order

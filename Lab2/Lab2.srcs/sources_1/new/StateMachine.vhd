@@ -11,7 +11,6 @@ ENTITY StateMachine IS
         L_light : OUT STD_LOGIC;
         R_light : OUT STD_LOGIC;
         H_light : OUT STD_LOGIC);
-       
         
 END StateMachine;
 
@@ -35,7 +34,7 @@ BEGIN
     
         IF (clk'event AND clk = '1') THEN --- rising_edge
             pr_state <= nx_state;
-            
+
             --implement clock divider here (math wise to blink for 1 sec we need a prescaler of 100,000,000)
         END IF;
         

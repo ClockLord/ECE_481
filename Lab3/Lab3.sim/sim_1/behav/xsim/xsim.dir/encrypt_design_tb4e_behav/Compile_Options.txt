@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "encrypt_design_tb4e_behav" "xil_defaultlib.encrypt_design_tb4e" -log "elaborate.log" 
