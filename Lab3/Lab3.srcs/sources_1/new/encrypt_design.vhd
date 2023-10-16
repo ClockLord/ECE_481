@@ -39,13 +39,10 @@ end encrypt_design;
 architecture Behavioral of encrypt_design is
 
 --we need to store the initial values of the LFSR
-signal LFSR : std_logic_vector(7 downto 0) := "00110100"; --value correcponds to 34 in hex
+signal LFSR : std_logic_vector(7 downto 0); -- "00110100"; --value correcponds to 34 in hex
 --signal shiftNum : integer := 1; --the number of shifts between sampled values is 1
 
 begin
-
-   
-
 
 --this will push the state machine forwards
 --so this shifting needs to have a predetermined number of shifts basiclally we will need to count
@@ -53,10 +50,13 @@ begin
     begin
     
     --load the key when load_key button is pressed
+    if rising_edge(clk) then
         if load_key = '1' then
             LFSR <= input_val;
+            LFSR_out <= input_val; --show the key on leds
         end if;
-        
+   end if;     
+   
     --keygen
     if rising_edge(clk) then    --operate on the rising edge to avoid clocking issues
          for i in 0 to 1 loop
@@ -72,13 +72,15 @@ begin
          end loop;
      end if;
      
-         LFSR_out <= LFSR;   --show the key on leds
+          
          
     --Perform encryption
+    if rising_edge(clk) then
         if encrypt_cntl = '1' then
             output_val <= input_val xor LFSR xor LFSR;
         end if;
-        
+   end if;     
+   
     end process;
     
     
