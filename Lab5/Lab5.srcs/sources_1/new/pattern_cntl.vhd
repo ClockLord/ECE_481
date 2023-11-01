@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
 
-ENTITY pattern_cntl IS
+ENTITY pattern_cntl IS  --takes in a position in x and y and outputs the rgb value
     PORT (
         video_on : IN STD_LOGIC;
         h_pos : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
@@ -14,6 +14,7 @@ ENTITY pattern_cntl IS
 END pattern_cntl;
 
 ARCHITECTURE pattern_arch OF pattern_cntl IS
+
     CONSTANT E_v_0 : INTEGER := 200;
     CONSTANT E_v_1 : INTEGER := 210;
     CONSTANT E_v_2 : INTEGER := 250;
@@ -29,6 +30,7 @@ ARCHITECTURE pattern_arch OF pattern_cntl IS
     CONSTANT E_h_6 : INTEGER := 400;
     CONSTANT E_h_7 : INTEGER := 410;
     CONSTANT E_h_8 : INTEGER := 500;
+    
     SIGNAL Left_E_on, Right_E_on, Middle_C_on : STD_LOGIC;
     SIGNAL Left_E_r, Right_E_r, Middle_C_r : STD_LOGIC_VECTOR(3 DOWNTO 0);
     SIGNAL Left_E_g, Right_E_g, Middle_C_g : STD_LOGIC_VECTOR(3 DOWNTO 0);

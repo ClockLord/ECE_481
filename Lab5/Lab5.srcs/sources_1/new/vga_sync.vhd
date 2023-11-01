@@ -2,7 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY vga_sync IS
+ENTITY vga_sync IS  --where is the clcok divider implemented
     PORT (
         clk, rst : IN STD_LOGIC;  -- Added the 'reset' port
         h_sync, v_sync : OUT STD_LOGIC;
@@ -22,7 +22,7 @@ ARCHITECTURE arch OF vga_sync IS
     CONSTANT VB : INTEGER := 33; --v. back porch
     CONSTANT VR : INTEGER := 2; --v. retrace
     -- mod-2 counter
-    SIGNAL mod2_reg, mod2_next : STD_LOGIC;
+    SIGNAL mod2_reg, mod2_next : STD_LOGIC; --this is where the clock divider is implemented
     -- sync counters
     SIGNAL v_count_reg, v_count_next : unsigned(10 DOWNTO 0);
     SIGNAL h_count_reg, h_count_next : unsigned(10 DOWNTO 0);
@@ -33,7 +33,7 @@ ARCHITECTURE arch OF vga_sync IS
     SIGNAL h_end, v_end, pixel_tick : STD_LOGIC;
 BEGIN
     -- registers
-    PROCESS (clk, rst)
+    PROCESS (clk, rst)  --state machine
     BEGIN
         IF rst = '1' THEN
             mod2_reg <= '0';
@@ -41,15 +41,18 @@ BEGIN
             h_count_reg <= (OTHERS => '0');
             v_sync_reg <= '0';
             h_sync_reg <= '0';
-        ELSIF (clk'event AND clk = '1') THEN
+            
+        ELSIF (clk'event AND clk = '1') THEN --rising edge of the clock
             mod2_reg <= mod2_next;
             v_count_reg <= v_count_next;
             h_count_reg <= h_count_next;
             v_sync_reg <= v_sync_next;
             h_sync_reg <= h_sync_next;
         END IF;
+        
     END PROCESS;
     -- mod-2 circuit to generate 25 MHz enable tick
+    mod2_next <= NOT mod2_reg;
     mod2_next <= NOT mod2_reg;
     -- 25 MHz pixel tick
     pixel_tick <= '1' WHEN mod2_reg = '1' ELSE
@@ -106,4 +109,5 @@ BEGIN
     h_pos <= STD_LOGIC_VECTOR(h_count_reg);
     v_pos <= STD_LOGIC_VECTOR(v_count_reg);
     p_tick <= pixel_tick;
+    
 END arch;

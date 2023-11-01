@@ -7,7 +7,7 @@ ENTITY VGA_basics IS
     PORT (
         clk : IN STD_LOGIC;
         rst : IN STD_LOGIC;
-        -- switch_input : in std_logic_vector(2 downto 0);
+       -- switch_input : in std_logic_vector(2 downto 0);
         VGA_R : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- C8 B8 B3 A3
         VGA_G : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- D6 C6 D5 C5
         VGA_B : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- C9 B9 D7 C7
@@ -29,10 +29,11 @@ ARCHITECTURE vgadisp_arch OF VGA_basics IS
             
     END COMPONENT;
     -- signal red_data, green_data, blue_data : std_logic;
-    SIGNAL rgb_s : STD_LOGIC_VECTOR(2 DOWNTO 0);
+   -- SIGNAL rgb_s : STD_LOGIC_VECTOR(2 DOWNTO 0);
     SIGNAL VGA_r_s : STD_LOGIC_VECTOR(3 DOWNTO 0); --
     SIGNAL VGA_g_s : STD_LOGIC_VECTOR(3 DOWNTO 0); --
     SIGNAL VGA_b_s : STD_LOGIC_VECTOR(3 DOWNTO 0); --
+    
     SIGNAL video_on : STD_LOGIC;
     SIGNAL h_pos, v_pos : STD_LOGIC_VECTOR(10 DOWNTO 0);
     
@@ -52,6 +53,7 @@ BEGIN
     BEGIN
         IF (clk'event AND clk = '1') THEN
             clk_25M <= NOT clk_25M;
+            --clk_25M <= NOT clk_25M;
         END IF;
     END PROCESS;
     
@@ -76,8 +78,8 @@ BEGIN
         graph_r => VGA_r_s,
         graph_g => VGA_g_s,
         graph_b => VGA_b_s);
-    VGA_R <= VGA_r_s;
-    VGA_G <= VGA_g_s;
-    VGA_B <= VGA_b_s;
+        VGA_R <= VGA_r_s;
+        VGA_G <= VGA_g_s;
+        VGA_B <= VGA_b_s;
     ---
 END vgadisp_arch;
