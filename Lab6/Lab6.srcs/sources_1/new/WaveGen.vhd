@@ -142,36 +142,39 @@ CLK_Divider:process(iCLK, iRESET) --implement clk divider circuit for the ADC ne
     end if;
 end process;
 
- WaveSelect:process(Switch)
+ WaveSelect:process(iclk)
   begin
+  if rising_edge(iclk) then
     if Switch = "00" then   --Sin Wave
        
       if DONE_DAC_temp = '1' then
              DAC_DATA_Buff <= sine_table(BuffCount);
       end if;
       
+  end if;
+  if rising_edge(iclk) then
     elsif Switch = "01" then --Triangle Wave
       
       if DONE_DAC_temp = '1' then
             DAC_DATA_Buff <= triangle_table(BuffCount);
       end if;
-      
-      
+  
+  end if;
+  if rising_edge(iclk) then    
     elsif Switch = "10" then --Sawtooth Wave
       
       if DONE_DAC_temp = '1' then
             DAC_DATA_Buff <= sawtooth_table(BuffCount);
       end if;
-      
+  end if;
+  if rising_edge(iclk) then
     elsif Switch = "11" then --Rectanglar Wave
     
         if DONE_DAC_temp ='1' then
             DAC_DATA_Buff <= Rectangular_table(BuffCount);
         end if;
-    else
-   
     end if;
-   
+  end if;
   end process WaveSelect;
 
 end Behavioral;
