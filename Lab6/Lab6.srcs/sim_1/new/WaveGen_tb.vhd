@@ -10,10 +10,10 @@ end WaveGen_tb;
 architecture Behavioral of WaveGen_tb is
     signal iCLK_tb, iRESET_tb : std_logic := '0';
     signal IEN_DAC_tb : std_logic := '1';
-    signal Switch_tb : std_logic_vector(1 downto 0) := "00";
+    signal Switch_tb : std_logic_vector(1 downto 0) := "01";
     signal oSYNC_L_tb, oDONE_DAC_tb, oBUSY_DAC_tb : std_logic;
     signal oSDATA_DAC_tb : std_logic := '0';
-   -- signal DivClk_tb : std_logic;
+    signal DivClk_tb : std_logic;
 
     COMPONENT WaveGen
         Port (
@@ -24,8 +24,8 @@ architecture Behavioral of WaveGen_tb is
             oSYNC_L : OUT  std_logic;
             oSDATA_DAC : OUT  std_logic;
             oDONE_DAC : OUT  std_logic;
-            oBUSY_DAC : OUT  std_logic
-           -- DivClk : Out std_logic  --just for simulation purposes
+            oBUSY_DAC : OUT  std_logic;
+            DivClk : Out std_logic  
         );
     end COMPONENT;
 
