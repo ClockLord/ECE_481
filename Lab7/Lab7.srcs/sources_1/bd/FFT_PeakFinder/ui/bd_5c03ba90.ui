@@ -1,0 +1,23 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.72133",
+   "Default View_TopLeft":"-439,-110",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port port-id_clk_100MHz -pg 1 -lvl 0 -x -30 -y 250 -defaultsOSRD
+preplace port port-id_reset_rtl_0 -pg 1 -lvl 0 -x -30 -y 220 -defaultsOSRD
+preplace portBus FFT_INPUT_DATA -pg 1 -lvl 0 -x -30 -y 90 -defaultsOSRD
+preplace inst xfft_0 -pg 1 -lvl 2 -x 630 -y 120 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 340 -y 370 -defaultsOSRD
+preplace netloc clk_100MHz_1 1 0 1 -10J 250n
+preplace netloc reset_rtl_0_1 1 0 1 0J 220n
+preplace netloc clk_wiz_0_clk_out1 1 1 1 430 180n
+preplace netloc FFT_INPUT_DATA_1 1 0 2 NJ 90 430
+levelinfo -pg 1 -30 340 630 830
+pagesize -pg 1 -db -bbox -sgen -230 -200 830 440
+"
+}
+{
+   "da_board_cnt":"2"
+}

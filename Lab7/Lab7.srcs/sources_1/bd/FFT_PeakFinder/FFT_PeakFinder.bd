@@ -1,0 +1,82 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7vx485tffg1157-1",
+      "gen_directory": "../../../../Lab7.gen/sources_1/bd/FFT_PeakFinder",
+      "name": "FFT_PeakFinder",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.1"
+    },
+    "design_tree": {
+      "xfft_0": "",
+      "clk_wiz_0": ""
+    },
+    "ports": {
+      "clk_100MHz": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        }
+      },
+      "reset_rtl_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "FFT_INPUT_DATA": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      }
+    },
+    "components": {
+      "xfft_0": {
+        "vlnv": "xilinx.com:ip:xfft:9.1",
+        "xci_name": "FFT_PeakFinder_xfft_0_0",
+        "xci_path": "ip\\FFT_PeakFinder_xfft_0_0\\FFT_PeakFinder_xfft_0_0.xci",
+        "inst_hier_path": "xfft_0"
+      },
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "FFT_PeakFinder_clk_wiz_0_0",
+        "xci_path": "ip\\FFT_PeakFinder_clk_wiz_0_0\\FFT_PeakFinder_clk_wiz_0_0.xci",
+        "inst_hier_path": "clk_wiz_0"
+      }
+    },
+    "nets": {
+      "FFT_INPUT_DATA_1": {
+        "ports": [
+          "FFT_INPUT_DATA",
+          "xfft_0/s_axis_data_tdata"
+        ]
+      },
+      "clk_100MHz_1": {
+        "ports": [
+          "clk_100MHz",
+          "clk_wiz_0/clk_in1"
+        ]
+      },
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "xfft_0/aclk"
+        ]
+      },
+      "reset_rtl_0_1": {
+        "ports": [
+          "reset_rtl_0",
+          "clk_wiz_0/reset"
+        ]
+      }
+    }
+  }
+}
